@@ -22,3 +22,6 @@ Martin Fowler wrote an amazing article on serverless architecture:
 
 Here's some more information on Box App Users:
 [Build on Box Platform](https://docs.box.com/docs/getting-started-box-platform)
+
+A short disclaimer:
+This is definitely not production-ready code. Please only utilize this code as an example when creating your own serverless application.
