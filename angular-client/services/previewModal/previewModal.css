@@ -1,0 +1,23 @@
+.preview-iframe {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+}
+@media (min-width: 800px) {
+  .modal-dialog, .modal-content, .modal-body {
+     width: 600px;
+     height: 550px;
+  }
+}
+@media (min-width: 1000px) {
+  .modal-dialog, .modal-content, .modal-body {
+     width: 850px;
+     height: 950px;
+  }
+}
+@media (min-width: 1200px) {
+  .modal-dialog, .modal-content, .modal-body {
+     width: 1150px;
+     height: 950px;
+  }
+}

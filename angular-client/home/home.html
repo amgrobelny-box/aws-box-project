@@ -1,0 +1,52 @@
+<style>
+  .delete-btn {
+    font-size: 14px;
+    background-color: red;
+  }
+  
+  .buy-btn {
+    font-size: 14px;
+    background-color: green;
+  }
+  
+  .sm-btn {
+    font-size: 16px;
+  }
+  
+  .msgtext {
+    text-align: left;
+    font: 18px;
+  }
+</style>
+
+<div class="home">
+  <h1 id="logo"><img src="/box_logo_blue_simpleshape_vector.png" /></h1>
+  <h2>Welcome to Box Platform, {{profile.name}}!</h2>
+  <div ng-repeat="folder in folders" class="row">
+    <div class="col-md-10 msgtext"><i class="fa fa-folder fa-lg" aria-hidden="true"></i>{{folder.name}}</div>
+  </div>
+  <div ng-repeat="file in files" class="row">
+    <div class="col-md-10 msgtext"><i class="fa fa-file fa-lg" aria-hidden="true"></i>{{file.name}}</div>
+    <button class="btn btn-warning sm-btn" ng-click="previewFile(file.id)">Preview this file</button>
+  </div>
+</div>
+</div>
+<br /><br />
+<h4>Upload on file select</h4>
+<button ngf-select="uploadFiles($files, $invalidFiles)" multiple accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+      Select Files</button>
+<br><br>
+<h4>Files:</h4>
+<ul>
+  <li ng-repeat="f in uploadedFiles" style="font:smaller">{{f.name}} {{f.$errorParam}}
+    <span class="progress" ng-show="f.progress >= 0">
+        <div class="progress-bar" style="width:{{f.progress}}%"  
+            ng-bind="f.progress + '%'"></div>
+      </span>
+  </li>
+  <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
+  </li>
+</ul>
+{{errorMsg}}
+<button class="btn btn-warning sm-btn" ng-click="logout()">Logout</button>
+</div>
